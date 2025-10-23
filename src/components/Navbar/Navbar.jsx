@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
 
@@ -19,7 +19,7 @@ const Navbar = () => {
     
 
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +54,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn border-0">Button</a>
+        <Link to="/auth/login" className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl">Login</Link>
       </div>
     </div>
   );

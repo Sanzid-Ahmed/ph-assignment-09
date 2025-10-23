@@ -19,10 +19,10 @@ const PopularServices = () => {
             <div className='font-bold text-4xl flex justify-center'>
             
             <MdOutlinePets color='#f0913f' />
-            <h1 className='pl-5 text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-200'>Popular Winter Care Services</h1>
+            <h1 className='pl-5 text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-200 text-center'>Popular Winter Care Services</h1>
             </div>
 
-            <div className='grid grid-cols-3 gap-10 mt-5 mx-auto w-11/12'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5 mx-auto w-11/12'>
                 {top3.map(service => <ServicesBody key={service.id} service={service} />)}
             </div>
         </div>
