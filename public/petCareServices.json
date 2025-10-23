@@ -1,0 +1,74 @@
+[
+  {
+    "serviceId": 1,
+    "serviceName": "Winter Coat Fitting for Dogs",
+    "providerName": "PawCare Studio",
+    "providerEmail": "info@pawcare.com",
+    "price": 25,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Custom winter coat fitting for dogs. Designed to keep pets warm, comfortable, and stylish during cold walks.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSBinipCt-4aKV_dU4zI2gH37fk4lcPKc96A&s",
+    "category": "Clothing"
+  },
+  {
+    "serviceId": 2,
+    "serviceName": "Winter Grooming & Paw Treatment",
+    "providerName": "CozyPets Grooming",
+    "providerEmail": "hello@cozypets.com",
+    "price": 30,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Professional grooming including moisturizing paw balm and snow-protective shampoo for sensitive pet skin.",
+    "image": "https://i.postimg.cc/dVj5BFBt/winter-grooming.jpg",
+    "category": "Grooming"
+  },
+  {
+    "serviceId": 3,
+    "serviceName": "Heated Pet Bedding Setup",
+    "providerName": "WarmNest Supplies",
+    "providerEmail": "contact@warmnest.com",
+    "price": 40,
+    "rating": 4.7,
+    "slotsAvailable": 5,
+    "description": "Cozy heated bedding installation service to keep pets comfortable indoors during freezing nights.",
+    "image": "https://i.postimg.cc/43vrxRbs/heated-bed.jpg",
+    "category": "Comfort"
+  },
+  {
+    "serviceId": 4,
+    "serviceName": "Winter Walking & Exercise Plans",
+    "providerName": "FitPets Trainer",
+    "providerEmail": "trainer@fitpets.com",
+    "price": 20,
+    "rating": 4.6,
+    "slotsAvailable": 6,
+    "description": "Special winter exercise sessions designed to keep your pets active and healthy while avoiding frostbite risks.",
+    "image": "https://i.postimg.cc/Bvxmcttr/winter-walk.jpg",
+    "category": "Training"
+  },
+  {
+    "serviceId": 5,
+    "serviceName": "Nutritional Winter Diet Plan",
+    "providerName": "HealthyTails Nutrition",
+    "providerEmail": "info@healthytails.com",
+    "price": 18,
+    "rating": 4.9,
+    "slotsAvailable": 8,
+    "description": "Expert diet recommendations and meal plans for pets to maintain energy levels and immune health during winter.",
+    "image": "https://supertails.com/cdn/shop/articles/featured-image_58fb164c-d412-41ae-930d-67128246d818.webp?v=1760004554",
+    "category": "Nutrition"
+  },
+  {
+    "serviceId": 6,
+    "serviceName": "Vet Home Check-up for Winter Health",
+    "providerName": "SnowPaw Clinic",
+    "providerEmail": "care@snowpawclinic.com",
+    "price": 50,
+    "rating": 5.0,
+    "slotsAvailable": 2,
+    "description": "At-home veterinary check-ups focused on respiratory and skin health during winter. Includes preventive consultation.",
+    "image": "https://buderimvet.com.au/wp-content/uploads/2023/09/regular-check-ups.jpg",
+    "category": "Health"
+  }
+]

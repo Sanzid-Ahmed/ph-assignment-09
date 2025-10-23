@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layouts/HomeLayout";
+import Home from "../components/Home";
 
 const router = createBrowserRouter([
     {
@@ -8,7 +9,12 @@ const router = createBrowserRouter([
         children: [
             {
                 index:true,
+                Component: Home,
+                loader: ()=>fetch("/petCareServices.json"),
             },
+            {
+                path:"/services"
+            }
         ]
     },
     {
