@@ -1,26 +1,36 @@
 import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
+import Button from "daisyui/components/button";
 
 const Navbar = () => {
+  const { user, logOut } = use(AuthContext);
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Sign-out successful.
+        alert("You loged out successfully")
+      })
+      .catch((error) => {
+        // An error happened.
+        alert(error)
+      });
+  };
 
-    const {user} = use(AuthContext);
-
-    const links = (
+  const links = (
     <>
       <li>{user && user.email}</li>
       <li>
-        <NavLink to="/">Home</NavLink> 
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to="/services">Services</NavLink> 
+        <NavLink to="/services">Services</NavLink>
       </li>
       <li>
-        <NavLink>My Profile</NavLink> 
+        <NavLink>My Profile</NavLink>
       </li>
     </>
   );
-    
 
   return (
     <div className="navbar">
@@ -53,12 +63,24 @@ const Navbar = () => {
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link to="/auth/login" className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl">Login</Link>
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl"
+          >
+            LogOut
+          </button>
+        ) : (
+          <Link
+            to="/auth/login"
+            className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
