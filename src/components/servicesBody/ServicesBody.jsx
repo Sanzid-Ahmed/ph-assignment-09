@@ -1,5 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const ServicesBody = ({ service }) => {
   const data = service;
@@ -23,7 +24,7 @@ const ServicesBody = ({ service }) => {
         <p className="font-bold">$ {data.price}</p>
         <div className="card-actions">
         </div>
-        <button className="btn btn-primary bg-gradient-to-r from-[#f0913f] to-pink-300 border-0 w-full rounded-4xl">Buy Now</button>
+        <Link to={`/details/${data.serviceId}`} className="btn btn-primary bg-gradient-to-r from-[#f0913f] to-pink-300 border-0 w-full rounded-4xl">View Details</Link>
       </div>
     </div>
   );

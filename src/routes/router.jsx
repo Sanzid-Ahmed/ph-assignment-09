@@ -5,6 +5,9 @@ import ServicesSection from "../components/servicesSection/ServicesSection";
 import Login from "../components/Login";
 import Register from "../components/Register";
 import AuthLayout from "../layouts/AuthLayout";
+import Details from "../components/details/Details";
+import PrivateRoute from "../provider/PrivateRoute";
+import profile from "../components/Profile/profile";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +24,10 @@ const router = createBrowserRouter([
         Component: ServicesSection,
         loader: () => fetch("/petCareServices.json"),
       },
+      {
+        path:"/profile",
+        Component:profile,
+      },
     ],
   },
   {
@@ -36,6 +43,13 @@ const router = createBrowserRouter([
         Component: Register,
       },
     ],
+  },
+  {
+    path:"/details/:id",
+    element: <PrivateRoute>
+      <Details></Details>
+    </PrivateRoute>,
+    loader: ()=> fetch("/petCareServices.json"),
   },
   {
     path: "/*",
