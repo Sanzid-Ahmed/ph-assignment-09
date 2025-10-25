@@ -23,7 +23,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        Component: ServicesSection,
+        element: <PrivateRoute>
+          <ServicesSection></ServicesSection>
+        </PrivateRoute>,
+        // Component: ServicesSection,
         loader: () => fetch("/petCareServices.json"),
         hydrateFallbackElement: <Loading></Loading>,
 

@@ -23,6 +23,7 @@ const ServicesBody = ({ service }) => {
         </div>
         <p className="font-bold">$ {data.price}</p>
         <div className="card-actions">
+          
         </div>
         <Link to={`/details/${data.serviceId}`} className="btn btn-primary bg-gradient-to-r from-[#f0913f] to-pink-300 border-0 w-full rounded-4xl">View Details</Link>
       </div>

@@ -1,6 +1,8 @@
 import React, { use, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
+import toast from "daisyui/components/toast";
+import { ToastContainer } from "react-toastify";
 
 const Login = () => {
     const [error, setError] = useState("");
@@ -60,10 +62,11 @@ const Login = () => {
             <button type="submit" className="btn btn-neutral mt-4">
               Login
             </button>
+            <ToastContainer/>
           </fieldset>
         </form>
         <p className="text-center font-bold p-3">
-          Don't have an account? <Link to="/auth/register">Register</Link>
+          Don't have an account? <Link to="/auth/register" className="text-red-500">Register</Link>
         </p>
       </div>
     </div>
