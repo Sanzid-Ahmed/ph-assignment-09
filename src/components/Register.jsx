@@ -1,11 +1,16 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import { Link, Links, useNavigate } from "react-router";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
+import { FaEye, FaGoogle } from "react-icons/fa6";
+import { IoEyeOff } from "react-icons/io5";
 
 const Register = () => {
-  const { createUser, setUser, updateUser } = use(AuthContext);
+  const { createUser, setUser, updateUser, signGoogle } = use(AuthContext);
   const navigate = useNavigate();
+
+
+  const [show, setShow] = useState(false);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -23,26 +28,38 @@ const Register = () => {
       toast.error("Password must be at least 6 characters long");
     } else {
       createUser(email, pass)
+        .then((res) => {
+          const user = res.user;
+          updateUser({ displayName: name, photoURL: photo })
+            .then(() => {
+              setUser({ ...user, displayName: name, photoURL: photo });
+              navigate("/");
+            })
+            .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              alert(errorMessage);
+              setUser(user);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    }
+  };
+
+  const handleGoogleSignIn = () => {
+    signGoogle()
       .then((res) => {
         const user = res.user;
-        updateUser({ displayName: name, photoURL: photo })
-          .then(() => {
-            setUser({ ...user, displayName: name, photoURL: photo });
-            navigate("/");
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            alert(errorMessage);
-            setUser(user);
-          });
+        setUser(user);
+        navigate("/");
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage);
+        toast.error(error.message);
       });
-    }
   };
 
   return (
@@ -78,21 +95,40 @@ const Register = () => {
                 className="input"
                 placeholder="Email"
               />
-              <label className="label">Password</label>
-              <input
-                required
-                name="password"
-                type="password"
-                className="input"
-                placeholder="Password"
-              />
+              <div className="relative">
+                <label className="label">Password</label>
+                <input
+                  name="password"
+                  type={show ? "text" : "password"}
+                  className="input"
+                  placeholder="Password"
+                  required
+                />
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute right-[30px] top-[33px] cursor-pointer z-1"
+                >
+                  {show ? <FaEye /> : <IoEyeOff />}
+                </span>
+              </div>
               <button type="submit" className="btn btn-neutral mt-4">
                 Register
               </button>
-              <ToastContainer/>
+
+              <button
+                type="button"
+                onClick={handleGoogleSignIn}
+                className="btn btn-outline btn-primary mt-3"
+              >
+                <FaGoogle /> Login with Google
+              </button>
+              <ToastContainer />
               <p className="text-center font-bold p-3">
-          Have an account? <Link to="/auth/login" className="text-red-500">Login</Link>
-        </p>
+                Have an account?{" "}
+                <Link to="/auth/login" className="text-red-500">
+                  Login
+                </Link>
+              </p>
             </fieldset>
           </form>
         </div>
