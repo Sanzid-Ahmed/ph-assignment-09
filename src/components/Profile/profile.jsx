@@ -1,8 +1,13 @@
 import React, { use } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast, ToastContainer } from "react-toastify";
 
 const profile = () => {
 const { user } = use(AuthContext);
+
+const m = () =>{
+  toast("Sorry Unable to make for final Exam!");
+}
 
   return (
     <div>
@@ -26,6 +31,8 @@ const { user } = use(AuthContext);
 
             <p className="text-primary text-md mb-4">{`${user? user.email : ""}`}</p>
           </div>
+          <button onClick={m} className="btn">Update Profile</button>
+          <ToastContainer/>
         </div>
       </div>
     </div> : <h1 className="font-bold text-5xl text-center my-25">Please Login to see profile</h1>}
