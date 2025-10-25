@@ -8,6 +8,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import Details from "../components/details/Details";
 import PrivateRoute from "../provider/PrivateRoute";
 import profile from "../components/Profile/profile";
+import Loading from "../components/Loading/Loading";
 
 const router = createBrowserRouter([
   {
@@ -18,11 +19,14 @@ const router = createBrowserRouter([
         index: true,
         Component: Home,
         loader: () => fetch("/petCareServices.json"),
+        hydrateFallbackElement: <Loading></Loading>,
       },
       {
         path: "/services",
         Component: ServicesSection,
         loader: () => fetch("/petCareServices.json"),
+        hydrateFallbackElement: <Loading></Loading>,
+
       },
       {
         path:"/profile",
@@ -50,6 +54,8 @@ const router = createBrowserRouter([
       <Details></Details>
     </PrivateRoute>,
     loader: ()=> fetch("/petCareServices.json"),
+    hydrateFallbackElement: <Loading></Loading>,
+
   },
   {
     path: "/*",

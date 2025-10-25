@@ -5,7 +5,8 @@ const profile = () => {
 const { user } = use(AuthContext);
 
   return (
-    <div className="min-h-screen flex justify-center items-center">
+    <div>
+      {user ? <div className="min-h-screen flex justify-center items-center">
       <div className="snap-center flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
         <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
           <div className="card-body items-center text-center p-6">
@@ -27,6 +28,7 @@ const { user } = use(AuthContext);
           </div>
         </div>
       </div>
+    </div> : <h1 className="font-bold text-5xl text-center my-25">Please Login to see profile</h1>}
     </div>
   );
 };

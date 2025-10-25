@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Header from "../Header";
+import Footer from "../Footer/Footer";
 import { useLoaderData, useParams } from "react-router";
 
 const Details = () => {
@@ -34,6 +35,7 @@ const Details = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

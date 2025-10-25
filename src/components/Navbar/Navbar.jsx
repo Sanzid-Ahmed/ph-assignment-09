@@ -1,25 +1,26 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import Button from "daisyui/components/button";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
+  const [isHovered, setIsHovered] = useState(false);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
-        alert("You loged out successfully")
+        alert("You loged out successfully");
       })
       .catch((error) => {
         // An error happened.
-        alert(error)
+        alert(error);
       });
   };
 
   const links = (
     <>
-      <li>{user && user.email}</li>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
@@ -60,12 +61,34 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-500">
+          pet-care
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+        {user ? (
+          <div
+            className="relative w-10 h-10 mr-3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 overflow-visible cursor-pointer"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <img
+              src={user?.photoURL || ""}
+              alt="User"
+              className="object-cover w-full h-full rounded-full"
+            />
+            {isHovered && (
+              <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 whitespace-nowrap shadow-lg z-20">
+                {user.displayName || "User"}
+              </div>
+            )}
+          </div>
+        ) : (
+          ""
+        )}
         {user ? (
           <button
             onClick={handleLogOut}
