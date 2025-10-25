@@ -4,7 +4,7 @@ import { Link } from "react-router";
 
 const ServicesBody = ({ service }) => {
   const data = service;
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="card bg-base-100 shadow-sm mx-auto rounded-3xl w-full h-100 hover:scale-[1.10]">

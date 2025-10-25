@@ -16,7 +16,7 @@ const Details = () => {
     const form = e.target;
     const email = form.email.value;
     const name = form.name.value;
-    console.log(email, name);
+    // console.log(email, name);
     toast.success("successfully booked services!");
   };
 

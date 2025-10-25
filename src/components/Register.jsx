@@ -19,7 +19,7 @@ const Register = () => {
     const photo = form.photo.value;
     const email = form.email.value;
     const pass = form.password.value;
-    console.log(name, email, pass);
+    // console.log(name, email, pass);
     if (!/[A-Z]/.test(pass)) {
       toast.error("Password must contain at least one uppercase letter");
     } else if (!/[a-z]/.test(pass)) {

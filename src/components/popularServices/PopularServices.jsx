@@ -6,12 +6,12 @@ import ServicesBody from '../servicesBody/ServicesBody';
 const PopularServices = () => {
 
     const allData = useLoaderData();
-    console.log(allData);
+    // console.log(allData);
 
     allData.sort((a, b) => b.rating - a.rating);
     const top3 = allData.slice(0, 3);
 
-    console.log(top3);
+    // console.log(top3);
 
 
     return (
