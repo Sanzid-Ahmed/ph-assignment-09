@@ -2,6 +2,7 @@ import React, { use, useState } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import Button from "daisyui/components/button";
+import { toast, ToastContainer } from "react-toastify";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -11,11 +12,11 @@ const Navbar = () => {
     logOut()
       .then(() => {
         // Sign-out successful.
-        alert("You loged out successfully");
+        toast("You loged out successfully");
       })
       .catch((error) => {
         // An error happened.
-        alert(error);
+        toast(error);
       });
   };
 
@@ -104,6 +105,7 @@ const Navbar = () => {
             Login
           </Link>
         )}
+        <ToastContainer/>
       </div>
     </div>
   );
