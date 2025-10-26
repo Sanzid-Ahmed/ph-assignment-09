@@ -1,16 +1,39 @@
-# React + Vite
+# Purpose
+A cozy single-page app to help pet owners keep their pets warm, safe, and healthy during winter — browse services, view/book winter care, read tips, and manage your profile.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live URL
+https://pet-care-123456.netlify.app/  
 
-Currently, two official plugins are available:
+# Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Winter-themed responsive SPA (mobile/tablet/desktop) with persistent navbar & footer.
 
-## React Compiler
+Hero slider (Swiper) showcasing cozy pet outfits.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+“Popular Winter Care Services” loaded from JSON — cards with image, name, rating, price, and View Details.
 
-## Expanding the ESLint configuration
+Protected Service Details page (requires login) with a “Book Now” form and success toasts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Authentication (Email/Password + Google) using Firebase; My Profile page with user info and update button.
+
+Extra sections: Winter Care Tips, Meet Our Expert Vets, and one additional relevant section.
+
+Subtle animations (AOS / Framer Motion / Swiper), toast notifications, and SPA routing with reload-safe routes.
+
+Environment variables for Firebase config; hosted on Netlify / Surge / Firebase Hosting.
+
+# NPM packages used (examples)
+
+react, react-dom, react-router-dom
+
+firebase
+
+swiper (hero slider)
+
+react-hot-toast (toasts)
+
+aos (scroll animations)
+
+tailwindcss / daisyui (styles)
+
+framer-motion (optional subtle animations)
