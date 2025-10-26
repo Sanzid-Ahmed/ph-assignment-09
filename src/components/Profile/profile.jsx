@@ -11,7 +11,7 @@ const Profile = () => {
   const [name, setName] = useState(user?.displayName || "");
   const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
 
-  
+
   const handleUpdate = async (e) => {
     e.preventDefault();
     if (!user) return toast.error("No user found!");
@@ -50,7 +50,7 @@ const Profile = () => {
                   {user?.displayName || "No Name"}
                 </h3>
 
-                <p className="text-primary text-md mb-4">
+                <p className="text-md mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-500">
                   {user?.email || "No Email"}
                 </p>
 
@@ -58,7 +58,7 @@ const Profile = () => {
                 {!showForm ? (
                   <button
                     onClick={() => setShowForm(true)}
-                    className="btn btn-primary"
+                    className="btn bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl"
                   >
                     Update Profile
                   </button>
@@ -81,12 +81,12 @@ const Profile = () => {
                       required
                     />
                     <div className="flex gap-2 justify-center">
-                      <button type="submit" className="btn btn-success">
+                      <button type="submit" className="btn  bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl w-[100px]">
                         Save
                       </button>
                       <button
                         type="button"
-                        className="btn btn-error"
+                        className="btn bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl w-[100px]"
                         onClick={() => setShowForm(false)}
                       >
                         Cancel

@@ -9,6 +9,7 @@ import Details from "../components/details/Details";
 import PrivateRoute from "../provider/PrivateRoute";
 import profile from "../components/Profile/profile";
 import Loading from "../components/Loading/Loading";
+import ForgotPassword from "../components/ForgotPassword/ForgotPassword";
 
 const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
     loader: ()=> fetch("/petCareServices.json"),
     hydrateFallbackElement: <Loading></Loading>,
 
+  },
+  {
+    path: "/auth/forgot-password",
+    element: <ForgotPassword />,
   },
   {
     path: "/*",

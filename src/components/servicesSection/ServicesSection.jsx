@@ -7,7 +7,7 @@ const ServicesSection = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-5 my-10 mx-auto w-10/12">
+      <div className="grid lg:grid-cols-3 gap-5 my-10 mx-auto w-10/12">
         {allData.map((service) => (
           <ServicesBody key={service.id} service={service} />
         ))}

@@ -1,9 +1,8 @@
-import React, { use, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../provider/AuthProvider";
 import { ToastContainer } from "react-toastify";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { FaEye, FaGoogle, FaShower } from "react-icons/fa6";
+import { FaEye, FaGoogle } from "react-icons/fa6";
 import { IoEyeOff } from "react-icons/io5";
 
 const Login = () => {
@@ -13,6 +12,7 @@ const Login = () => {
   const location = useLocation();
 
   const [show, setShow] = useState(false);
+  const [email, setEmail] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -35,6 +35,10 @@ const Login = () => {
       .catch((error) => setError(error.code));
   };
 
+  const handleForgotPassword = () => {
+    navigate("/auth/forgot-password", { state: { email } });
+  };
+
   return (
     <div className="flex justify-center min-h-screen items-center">
       <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
@@ -49,6 +53,8 @@ const Login = () => {
               type="email"
               className="input"
               placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <div className="relative">
@@ -60,12 +66,21 @@ const Login = () => {
                 placeholder="Password"
                 required
               />
-              <span onClick={()=> setShow(!show)} className="absolute right-[30px] top-[33px] cursor-pointer z-1">
-                {show? <FaEye />:<IoEyeOff/>}
+              <span
+                onClick={() => setShow(!show)}
+                className="absolute right-[30px] top-[33px] cursor-pointer z-1"
+              >
+                {show ? <FaEye /> : <IoEyeOff />}
               </span>
             </div>
             <div>
-              <a className="link link-hover">Forgot password?</a>
+              <button
+                type="button"
+                onClick={handleForgotPassword}
+                className="link link-hover text-blue-600"
+              >
+                Forgot password?
+              </button>
             </div>
 
             {error && (
