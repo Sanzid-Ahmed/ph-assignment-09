@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router";
 import { AuthContext } from "../../provider/AuthProvider";
 import Button from "daisyui/components/button";
 import { toast, ToastContainer } from "react-toastify";
+import Logo from "../logo/Logo";
 
 const Navbar = () => {
   const { user, logOut } = use(AuthContext);
@@ -35,10 +36,11 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar">
+    <div className="bg-pink-600">
+    <div className="navbar w-11/12 lg:w-10/12 mx-auto">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -57,17 +59,17 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow bg-white"
+            className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow bg-pink-600 text-white font-bold"
           >
             {links}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-500">
-          pet-care
+        <Link to="/">
+          <Logo></Logo>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal px-1 text-white font-bold">{links}</ul>
       </div>
       <div className="navbar-end">
         {user ? (
@@ -90,23 +92,16 @@ const Navbar = () => {
         ) : (
           ""
         )}
-        {user ? (
-          <button
-            onClick={handleLogOut}
-            className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl"
-          >
-            LogOut
-          </button>
-        ) : (
-          <Link
-            to="/auth/login"
-            className="btn border-0 bg-gradient-to-r from-[#f0913f] to-pink-300 rounded-3xl"
-          >
-            Login
-          </Link>
-        )}
+
+        {/* Login and Logout button control */}
+        {user ? 
+          (<button onClick={handleLogOut}className="btn text-pink-300">LogOut</button>): 
+          (<Link to="/auth/login" className="btn text-pink-600">Login</Link>)
+        }
+
         <ToastContainer/>
       </div>
+    </div>
     </div>
   );
 };

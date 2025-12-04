@@ -1,70 +1,32 @@
-import React from "react";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import p1 from "../../assets/Pet-Careffh.webp"
 import p2 from "../../assets/dogs-in-line-stockcake.jpg"
 import p3 from "../../assets/vet-min.webp"
 import p4 from "../../assets/pexels-chevanon-1108099.jpg"
 
-const Swiper = () => {
-  return (
-    <div className="carousel w-full h-[50vh]">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img
-          src={p1}
-          className="w-full"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide4" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img
-          src={p2}
-          className="w-full"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide1" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img
-          src={p3}
-          className="w-full"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide2" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img
-          src={p4}
-          className="w-full"
-        />
-        <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-          <a href="#slide3" className="btn btn-circle">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle">
-            ❯
-          </a>
-        </div>
-      </div>
-    </div>
-  );
-};
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-export default Swiper;
+import { Autoplay, Pagination } from 'swiper/modules';
+
+export default function App() {
+  return (
+    <>
+      <Swiper
+        pagination={{ dynamicBullets: true }}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
+        modules={[Autoplay, Pagination]}
+        className="mySwiper w-11/12 lg:w-10/12 mx-auto"
+      >
+        <SwiperSlide><img className='h-[300px] md:h-[500px] lg:h-[700px] w-full' src={p1} alt="" /></SwiperSlide>
+        <SwiperSlide><img className='h-[300px] md:h-[500px] lg:h-[700px] w-full' src={p2} alt="" /></SwiperSlide>
+        <SwiperSlide><img className='h-[300px] md:h-[500px] lg:h-[700px] w-full' src={p3} alt="" /></SwiperSlide>
+        <SwiperSlide><img className='h-[300px] md:h-[500px] lg:h-[700px] w-full' src={p4} alt="" /></SwiperSlide>
+      </Swiper>
+    </>
+  );
+}

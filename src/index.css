@@ -9,7 +9,9 @@
 } */
 
 .active{
-  color: pink;
+  font:bold;
+  background-color: white;
+  color: rgb(253, 0, 127);
 }
 
 

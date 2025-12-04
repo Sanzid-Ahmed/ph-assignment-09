@@ -25,7 +25,7 @@ const ServicesBody = ({ service }) => {
         <div className="card-actions">
           
         </div>
-        <Link to={`/details/${data.serviceId}`} className="btn btn-primary bg-gradient-to-r from-[#f0913f] to-pink-300 border-0 w-full rounded-4xl">View Details</Link>
+        <Link to={`/details/${data.serviceId}`} className="btn  w-full rounded-4xl">View Details</Link>
       </div>
     </div>
   );
