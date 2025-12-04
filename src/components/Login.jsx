@@ -22,17 +22,19 @@ const Login = () => {
 
     signInUser(email, pass)
       .then(() => {
-        navigate(location.state ? location.state : "/");
-      })
-      .catch((error) => setError(error.code));
+    const from = location.state?.from?.pathname || "/";
+    navigate(from, { replace: true });
+  })
+  .catch((error) => setError(error.code));
   };
 
   const handleGoogle = () => {
     signGoogle()
       .then(() => {
-        navigate(location.state ? location.state : "/");
-      })
-      .catch((error) => setError(error.code));
+    const from = location.state?.from?.pathname || "/";
+    navigate(from, { replace: true });
+  })
+  .catch((error) => setError(error.code));
   };
 
   const handleForgotPassword = () => {
