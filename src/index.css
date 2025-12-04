@@ -4,9 +4,9 @@
   themes: light --default;
  }
 
-/* body{
-  background-color: #f0913f;
-} */
+body{
+  background-color: #fceff6;
+}
 
 .active{
   font:bold;

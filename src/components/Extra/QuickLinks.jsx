@@ -7,11 +7,11 @@ const QuickLinks = () => {
   return (
     <section className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 my-16">
       
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4 text-gray-800">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center mb-4 text-pink-600">
         Need Help Now?
       </h2>
       
-      <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+      <p className=" text-gray-600 text-center mb-12 max-w-3xl mx-auto">
         Jump straight to our most frequently used tools and advice pages.
       </p>
 

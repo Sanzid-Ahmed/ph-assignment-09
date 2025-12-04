@@ -7,7 +7,7 @@ const ExpertVets = () => {
     <section className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 my-16">
       
 
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-200">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center mb-12 text-pink-600">
         Meet Our Expert Vets
       </h2>
       
@@ -16,7 +16,7 @@ const ExpertVets = () => {
 
     
         <div className="snap-center flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl h-[400px]">
             <div className="card-body items-center text-center p-6">
               
               <div className="avatar mb-4">
@@ -40,7 +40,7 @@ const ExpertVets = () => {
 
     
         <div className="snap-center flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl h-[400px]">
             <div className="card-body items-center text-center p-6">
               
               <div className="avatar mb-4">
@@ -64,7 +64,7 @@ const ExpertVets = () => {
 
     
         <div className="snap-center flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl h-[400px]">
             <div className="card-body items-center text-center p-6">
               
               <div className="avatar mb-4">
@@ -87,7 +87,7 @@ const ExpertVets = () => {
         </div>
 
         <div className="snap-center flex-none w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+          <div className="card w-full bg-base-100 shadow-xl border border-gray-100 transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl h-[400px]">
             <div className="card-body items-center text-center p-6">
               
               <div className="avatar mb-4">

@@ -25,7 +25,7 @@ const ServicesBody = ({ service }) => {
         <div className="card-actions">
           
         </div>
-        <Link to={`/details/${data.serviceId}`} className="btn  w-full rounded-4xl">View Details</Link>
+        <Link to={`/details/${data.serviceId}`} className="btn  w-full rounded-4xl bg-pink-600 text-white font-bold">View Details</Link>
       </div>
     </div>
   );

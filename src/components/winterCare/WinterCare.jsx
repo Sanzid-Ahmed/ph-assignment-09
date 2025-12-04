@@ -5,11 +5,11 @@ import React from 'react';
 const WinterCare = () => {
   return (
    
-    <section className="w-11/12 mx-auto p-8 my-20 rounded-xl shadow-2xl">
+    <section className="w-11/12 lg:w-10/12 mx-auto p-8 my-20 rounded-xl">
       
      
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 pb-3">
-        <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#f0913f] to-pink-500'>
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-pink-600 text-center mb-10 pb-3">
+        <span className='text-pink-600'>
             Winter Care Tips for Pets
         </span> 
       </h2>

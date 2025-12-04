@@ -16,7 +16,7 @@ export default function App() {
       <Swiper
         pagination={{ dynamicBullets: true }}
         autoplay={{
-          delay: 1500,
+          delay: 2000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Pagination]}
